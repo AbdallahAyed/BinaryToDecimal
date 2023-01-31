@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serhif;
+}
+
+#root {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+}
+#root::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.8;
+}
+#root .App {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  z-index: 6;
+  padding-top: 120px;
+}
+#root .App h1 {
+  color: #e0fbfc;
+  margin-bottom: 20px;
+}
+@media (max-width: 503px) {
+  #root .App h1 {
+    font-size: 32px;
+  }
+}
+#root .App .right {
+  color: #4ad66d;
+}
+#root .App .wrong {
+  color: #d90429;
+}
+#root .App .wait {
+  color: #edf2f4;
+}
+#root .App input {
+  height: 60px;
+  width: 500px;
+  border-radius: 35px;
+  border: 1px solid #edf2f4;
+  background: transparent;
+  margin-bottom: 25px;
+  padding: 20px;
+  font-size: 25px;
+  margin-top: 30px;
+  color: #edf2f4;
+}
+@media (max-width: 503px) {
+  #root .App input {
+    height: 50px;
+    width: 250px;
+  }
+}
+#root .App input:focus {
+  border-width: 2px;
+}
+#root .App .display p {
+  color: #edf2f4;
+  font-size: 30px;
+  margin-top: 20px;
+}
+#root .App .not-result {
+  font-size: 20px !important;
+}
+#root .App code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #e0fbfc;
+  font-size: 10px;
+  margin-top: 100px;
+}
+#root .App code a {
+  color: #0496ff;
+  font-weight: 600;
+  transition: 0.2s;
+}
+#root .App code a:hover {
+  color: #2667ff;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,26 @@
+@mixin flexColumn($justify-content, $flex-direction: column) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: center;
+  flex-direction: $flex-direction;
+}
+
+@mixin breakpoints($point) {
+  @if $point == mobile {
+    @media (max-width: 503px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 992px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}

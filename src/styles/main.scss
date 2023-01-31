@@ -1,0 +1,100 @@
+@use "./helpers/mixins" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serhif;
+}
+
+$success: #4ad66d;
+$dangers: #d90429;
+$light: #edf2f4;
+$sky: #e0fbfc;
+$linkColor: #0496ff;
+$hoverLinkColor: #2667ff;
+$phoneScreen: 503px;
+$bigScreen: 1000px;
+
+#root {
+  @include flexColumn(space-evenly);
+  height: 120vh;
+  width: 100vw;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.8;
+  }
+  .App {
+    @include flexColumn(space-evenly);
+    z-index: 6;
+    padding-top: 120px;
+    h1 {
+      color: $sky;
+      margin-bottom: 20px;
+      @include breakpoints(mobile) {
+        font-size: 32px;
+      }
+    }
+    .right {
+      color: $success;
+    }
+    .wrong {
+      color: $dangers;
+    }
+    .wait {
+      color: $light;
+    }
+    input {
+      height: 60px;
+      width: 500px;
+      border-radius: 35px;
+      border: 1px solid $light;
+      background: transparent;
+      margin-bottom: 25px;
+      padding: 20px;
+      font-size: 25px;
+      margin-top: 30px;
+      color: $light;
+      @include breakpoints(mobile) {
+        height: 50px;
+        width: 250px;
+      }
+      &:focus {
+        border-width: 2px;
+      }
+    }
+    .display {
+      p {
+        color: $light;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+    }
+    .not-result {
+      font-size: 20px !important;
+    }
+    code {
+      @include flexColumn(center, row);
+      color: $sky;
+      font-size: 10px;
+      margin-top: 100px;
+      a {
+        color: $linkColor;
+        font-weight: 600;
+        transition: 0.2s;
+        &:hover {
+          color: $hoverLinkColor;
+        }
+      }
+    }
+  }
+}
